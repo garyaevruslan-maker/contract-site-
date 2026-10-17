@@ -1,0 +1,1055 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0b3d2e">
+<title>Служба по контракту в ВС РФ | Harbiy xizmat</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green:#0b3d2e;
+  --dark:#072b21;
+  --gold:#d4af37;
+  --paper:#f5f7fa;
+  --ink:#192e28;
+  --muted:#65756f;
+  --line:#dde5e0;
+  --radius:22px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font:16px/1.65 Inter,Arial,sans-serif;
+}
+h1,h2,h3,p{margin:0}
+h1,h2,h3,.brand,.number{font-family:Manrope,Arial,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+button,a,input,select,textarea{-webkit-tap-highlight-color:transparent}
+button,a{touch-action:manipulation}
+button{cursor:pointer}
+img{max-width:100%;display:block}
+svg{
+  width:24px;
+  height:24px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.6;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+  flex-shrink:0;
+}
+a:focus-visible,button:focus-visible{
+  outline:3px solid var(--gold);
+  outline-offset:5px;
+}
+.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+.section{padding:94px 0}
+.eyebrow{
+  font-size:11px;
+  letter-spacing:.18em;
+  font-weight:600;
+  text-transform:uppercase;
+  color:#88701d;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-bottom:18px;
+}
+.eyebrow:before{
+  content:"";
+  width:30px;
+  height:1px;
+  background:var(--gold);
+}
+h2{
+  font-size:clamp(30px,4vw,46px);
+  line-height:1.18;
+  letter-spacing:-.045em;
+  font-weight:800;
+}
+.intro{max-width:530px;color:var(--muted);margin-top:20px}
+.section-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:end;
+  gap:40px;
+  margin-bottom:36px;
+}
+.section-head .intro{max-width:360px;margin:0}
+.btn{
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  gap:18px;
+  min-height:54px;
+  padding:14px 24px;
+  border:1px solid transparent;
+  border-radius:10px;
+  font-size:14px;
+  font-weight:600;
+  transition:background .2s,transform .2s,box-shadow .2s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.gold{background:var(--gold);color:var(--dark)}
+.btn.gold:hover{background:#e4c557;box-shadow:0 8px 28px #d4af3730}
+.btn.outline{border-color:#ffffff65;color:white;background:#ffffff06}
+.btn.outline:hover{background:#ffffff15}
+.btn.green{background:var(--green);color:white}
+.btn.green:hover{background:#15533f}
+.btn svg{width:18px;height:18px}
+
+/* ШАПКА */
+.header{
+  position:sticky;
+  top:0;
+  z-index:10;
+  background:#f5f7faf5;
+  border-bottom:1px solid var(--line);
+  backdrop-filter:blur(16px);
+}
+.header-inner{
+  height:82px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:-.04em;
+}
+.brand-mark{
+  width:36px;
+  height:36px;
+  border-radius:9px;
+  background:var(--green);
+  color:var(--gold);
+  display:grid;
+  place-items:center;
+}
+.nav{display:flex;gap:30px;font-size:13px;font-weight:500}
+.nav a:hover{color:#8a6e13}
+.lang{
+  display:flex;
+  border:1px solid var(--line);
+  border-radius:9px;
+  padding:4px;
+  gap:3px;
+}
+.lang button{
+  border:0;
+  border-radius:5px;
+  background:none;
+  font-size:11px;
+  padding:7px 10px;
+  font-weight:600;
+  color:var(--muted);
+}
+.lang button[aria-pressed=true]{background:var(--green);color:white}
+
+/* HERO */
+.hero{position:relative;background:var(--green);color:white;overflow:hidden}
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,#072b21fa 7%,#072b21d9 43%,#072b2120),
+    url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1600&q=80')
+    center 52%/cover;
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  min-height:650px;
+  padding:78px 0 80px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.hero .eyebrow{color:#e7cf81}
+.hero h1{
+  font-size:clamp(38px,5.5vw,72px);
+  line-height:1.08;
+  letter-spacing:-.06em;
+  max-width:760px;
+  font-weight:800;
+}
+.hero h1 em{font-style:normal;color:#e3c966}
+.hero-text{
+  max-width:500px;
+  color:#d0ddd7;
+  margin-top:25px;
+  font-size:16px;
+}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.hero-note{
+  display:flex;
+  align-items:center;
+  gap:9px;
+  font-size:11px;
+  color:#c0d0c7;
+  margin-top:30px;
+}
+.hero-note svg{width:15px;height:15px;color:#dfc66d}
+
+.facts{background:white;border-bottom:1px solid var(--line)}
+.facts-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  padding:30px 0;
+}
+.fact{padding:0 30px;border-right:1px solid var(--line)}
+.fact:first-child{padding-left:0}
+.fact:last-child{border:0}
+.number{
+  display:block;
+  font-size:32px;
+  line-height:1.2;
+  letter-spacing:-.06em;
+  font-weight:800;
+  color:var(--green);
+}
+.fact small{
+  display:block;
+  font-size:12px;
+  margin-top:8px;
+  color:var(--muted);
+}
+
+/* КАРТОЧКИ */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:20px;
+}
+.card{
+  position:relative;
+  background:white;
+  border:1px solid #e3e9e5;
+  border-radius:var(--radius);
+  padding:30px;
+  overflow:hidden;
+  box-shadow:0 8px 26px #132e2205;
+  transition:transform .25s,box-shadow .25s;
+}
+.card:before{
+  content:"";
+  position:absolute;
+  inset:0 0 auto;
+  height:3px;
+  background:var(--gold);
+}
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px #132e2210;
+}
+.icon{
+  width:48px;
+  height:48px;
+  display:grid;
+  place-items:center;
+  background:#edf3ee;
+  border-radius:13px;
+  color:var(--green);
+  margin-bottom:30px;
+}
+.card h3{font-size:18px;letter-spacing:-.025em;line-height:1.35}
+.card p{font-size:13px;color:var(--muted);margin-top:10px}
+.card-id{
+  position:absolute;
+  top:30px;
+  right:26px;
+  font:11px Manrope;
+  color:#8c9e94;
+}
+
+/* УСЛОВИЯ */
+.terms{background:var(--green);color:white}
+.terms .eyebrow{color:#dfc66d}
+.terms .intro{color:#b9cec2}
+.terms-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:80px;
+  align-items:center;
+}
+.terms-list{display:grid;gap:22px}
+.term{
+  display:flex;
+  gap:17px;
+  padding-bottom:20px;
+  border-bottom:1px solid #ffffff20;
+}
+.term:last-child{padding-bottom:0;border:0}
+.term svg{color:var(--gold);margin-top:3px}
+.term h3{font-size:16px}
+.term p{color:#b9cec2;font-size:13px;margin-top:5px}
+.terms .btn{margin-top:28px}
+
+/* ФОТОКАРТОЧКИ */
+.support-card{padding:0}
+.support-card img{
+  width:100%;
+  height:235px;
+  object-fit:cover;
+  transition:transform .5s;
+}
+.photo-wrap{overflow:hidden}
+.support-card:hover img{transform:scale(1.04)}
+.photo-caption{padding:25px 27px}
+.photo-caption .icon{
+  width:38px;
+  height:38px;
+  float:right;
+  margin:0 0 12px 12px;
+}
+.photo-caption .icon svg{width:20px;height:20px}
+
+/* ЭТАПЫ */
+.process{background:#eaf0eb}
+.steps{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:25px;
+  margin-top:40px;
+}
+.step{border-top:1px solid #b6c9bc;padding-top:20px}
+.step .number{color:#8a731e;font-size:27px;margin-bottom:25px}
+.step h3{font-size:17px;margin-bottom:8px}
+.step p{font-size:13px;color:var(--muted)}
+
+/* ФОРМА */
+.contact{
+  display:grid;
+  grid-template-columns:.85fr 1.15fr;
+  gap:80px;
+  align-items:start;
+}
+.contact-side{position:sticky;top:125px}
+.contact-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:34px;
+  font-size:13px;
+  font-weight: 600;
+  color:var(--green);
+}
+.contact-badge svg{color:#9b7d20}
+.form{
+  background:white;
+  border:1px solid var(--line);
+  border-radius:var(--radius);
+  padding:34px;
+  box-shadow:0 12px 50px #132e2207;
+}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.field{display:flex;flex-direction:column;gap:7px}
+.field.full{grid-column:1/-1}
+label{font-size:12px;font-weight:600}
+input,select,textarea{
+  width:100%;
+  min-width:0;
+  border:1px solid #dce4de;
+  border-radius:9px;
+  padding:12px 13px;
+  color:var(--ink);
+  background:#fafcfb;
+  font-size:14px;
+  outline:none;
+  transition:border .2s,box-shadow .2s;
+}
+input:focus,select:focus,textarea:focus{
+  border-color:#9c842d;
+  box-shadow:0 0 0 3px #d4af371c;
+}
+textarea{resize:vertical;min-height:104px}
+input::placeholder,textarea::placeholder{color:#929d98}
+.form .btn{width:100%;margin-top:23px}
+.success{
+  margin-top:18px;
+  padding:15px;
+  border-radius:9px;
+  background:#eaf3ec;
+  color:var(--green);
+  font-size:13px;
+  font-weight: 600;
+}
+.success[hidden]{display:none}
+.footer{background:var(--dark);color:#b9cec2;padding:30px 0}
+.footer-inner{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:24px;
+}
+.footer .brand{color:white;font-size:20px}
+.footer p{max-width:430px;text-align:right;font-size:11px}
+
+/* АНИМАЦИИ */
+.reveal{opacity:1;transform:none}
+.motion .reveal{
+  opacity:0;
+  transform:translateY(22px);
+  transition:opacity .65s,transform .65s;
+}
+.motion .reveal.visible{opacity:1;transform:none}
+
+/* АДАПТИВНОСТЬ */
+@media(max-width:900px){
+  .nav{gap:18px}
+  .hero-inner{min-height:580px}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .terms-grid,.contact{gap:40px}
+  .steps{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr 1.2fr}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
+  .fact{padding:0 20px}
+  .support-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .photo-caption{padding:20px}
+  .support-card img{height:180px}
+}
+@media(max-width:640px){
+  .wrap{width:calc(100% - 36px)}
+  .header-inner{height:70px}
+  .brand{font-size:17px}
+  .nav{display:none}
+  .hero-inner{min-height:610px;padding:62px 0}
+  .hero:after{
+    background-image:
+      linear-gradient(90deg,#072b21ed,#072b21a8),
+      url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80');
+  }
+  .hero h1{font-size:clamp(32px,9vw,54px)}
+  .hero-text{font-size:14px;max-width:330px}
+  .actions .btn{padding:13px 19px}
+  .section{padding:65px 0}
+  .facts-grid{grid-template-columns:1fr 1fr;gap:25px 0}
+  .fact{padding:0 18px}
+  .fact:nth-child(2){border:0}
+  .fact:nth-child(3){padding-left:0}
+  .number{font-size:26px}
+  .section-head{display:block;margin-bottom:28px}
+  .section-head .intro{margin-top:18px}
+  .grid,.support-grid,.terms-grid,.contact{grid-template-columns:1fr}
+  .card{padding:25px}
+  .icon{margin-bottom:20px}
+  .support-card{padding:0}
+  .support-card img{height:220px}
+  .terms-grid{gap:35px}
+  .contact{gap:30px}
+  .contact-side{position:static}
+  .form{padding:24px}
+  .footer-inner{align-items:start;flex-direction:column}
+  .footer p{text-align:left}
+  .steps{gap:26px 20px}
+  .step .number{margin-bottom:15px}
+  .step h3{font-size:15px}
+  .eyebrow{font-size:10px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .motion .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<svg width="0" height="0" style="position:absolute;overflow:hidden" aria-hidden="true">
+<defs>
+  <symbol id="arrow" viewBox="0 0 24 24">
+    <path d="M5 12h14M13 6l6 6-6 6"/>
+  </symbol>
+  <symbol id="mark" viewBox="0 0 24 24">
+    <path d="m5 17 7-12 7 12M8 12h8"/>
+  </symbol>
+  <symbol id="check" viewBox="0 0 24 24">
+    <path d="m7 12 3 3 7-7"/>
+    <circle cx="12" cy="12" r="9"/>
+  </symbol>
+  <symbol id="truck" viewBox="0 0 24 24">
+    <path d="M3 6h11v11H3zM14 10h4l3 4v3h-7"/>
+    <circle cx="7" cy="18" r="2"/>
+    <circle cx="18" cy="18" r="2"/>
+  </symbol>
+  <symbol id="box" viewBox="0 0 24 24">
+    <path d="m12 3 9 5v9l-9 5-9-5V8zM3 8l9 5 9-5M12 13v9M7 5.8l9 5"/>
+  </symbol>
+  <symbol id="tool" viewBox="0 0 24 24">
+    <path d="M14 6a5 5 0 0 0-6 6l-5 5a2 2 0 0 0 4 4l5-5a5 5 0 0 0 6-6l-3 3-4-4z"/>
+  </symbol>
+  <symbol id="building" viewBox="0 0 24 24">
+    <path d="M5 21V3h14v18M3 21h18M9 7h1m4 0h1M9 11h1m4 0h1M9 15h1m4 0h1M10 21v-3h4v3"/>
+  </symbol>
+  <symbol id="coffee" viewBox="0 0 24 24">
+    <path d="M4 8h12v8a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4zM16 9h2a3 3 0 0 1 0 6h-2M7 3v2m5-2v2M3 22h15"/>
+  </symbol>
+  <symbol id="people" viewBox="0 0 24 24">
+    <circle cx="9" cy="7" r="3"/>
+    <path d="M3 21v-3a6 6 0 0 1 12 0v3M17 4a3 3 0 0 1 0 6M21 21v-3a6 6 0 0 0-4-5"/>
+  </symbol>
+  <symbol id="plane" viewBox="0 0 24 24">
+    <path d="m3 10 8 2 6-8a2 2 0 0 1 3 2l-5 8 2 7-3-1-3-5-5-1z"/>
+  </symbol>
+  <symbol id="bed" viewBox="0 0 24 24">
+    <path d="M3 21V6m18 15V11H3M3 17h18M6 11V7h6v4M12 11V7h6v4"/>
+  </symbol>
+  <symbol id="document" viewBox="0 0 24 24">
+    <path d="M14 3H5v18h14V8zM14 3v5h5M8 12h8M8 16h6"/>
+  </symbol>
+</defs>
+</svg>
+
+<header class="header">
+  <div class="wrap header-inner">
+    <a class="brand" href="#" aria-label="Служба по контракту">
+      <span class="brand-mark">
+        <svg aria-hidden="true"><use href="#mark"/></svg>
+      </span>
+      <span data-ru="КОНТРАКТ" data-uz="KONTRAKT">КОНТРАКТ</span>
+    </a>
+
+    <nav class="nav" aria-label="Навигация">
+      <a href="#directions" data-ru="Должности" data-uz="Lavozimlar">Должности</a>
+      <a href="#terms" data-ru="Условия" data-uz="Shartlar">Условия</a>
+      <a href="#support" data-ru="Трансфер" data-uz="Transfer">Трансфер</a>
+    </nav>
+
+    <div class="lang" role="group" aria-label="Язык / Til">
+      <button type="button" data-lang="ru" aria-pressed="true">RU</button>
+      <button type="button" data-lang="uz" aria-pressed="false">UZ</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero">
+  <div class="wrap hero-inner">
+    <p class="eyebrow"
+       data-ru="Официальное информирование · Уполномоченные представители"
+       data-uz="Rasmiy ma'lumot · Vakolatli vakillar">
+      Официальное информирование · Уполномоченные представители
+    </p>
+
+    <h1>
+      <span data-ru="Служба по контракту" data-uz="Shartnoma bo'yicha xizmat">Служба по контракту</span><br>
+      <em data-ru="в Вооружённых Силах РФ" data-uz="RF Qurolli Kuchlarida">в Вооружённых Силах РФ</em>
+    </h1>
+
+    <p class="hero-text"
+       data-ru="Для граждан Узбекистана и стран СНГ. Полное сопровождение: от билета на родине до трудоустройства в России. Стабильный доход, гражданство, льготы для семьи."
+       data-uz="O'zbekiston va MDH fuqarolari uchun. To'liq hamrohlik: vatandagi chiptadan Rossiyada ishga joylashishgacha. Barqaror daromad, fuqarolik, oila uchun imtiyozlar.">
+      Для граждан Узбекистана и стран СНГ. Полное сопровождение: от билета на родине до трудоустройства в России. Стабильный доход, гражданство, льготы для семьи.
+    </p>
+
+    <div class="actions">
+      <a class="btn gold" href="#application">
+        <span data-ru="Оставить заявку" data-uz="Ariza qoldirish">Оставить заявку</span>
+        <svg aria-hidden="true"><use href="#arrow"/></svg>
+      </a>
+      <a class="btn outline" href="#directions"
+         data-ru="Тыловые должности" data-uz="Orqa xizmat lavozimlari">
+         Тыловые должности
+      </a>
+    </div>
+
+    <p class="hero-note">
+      <svg aria-hidden="true"><use href="#check"/></svg>
+      <span data-ru="Безопасные тыловые подразделения и обеспечивающие части"
+            data-uz="Xavfsiz orqa bo'linmalar va ta'minot qismlari">
+        Безопасные тыловые подразделения и обеспечивающие части
+      </span>
+    </p>
+  </div>
+</section>
+
+<div class="facts">
+  <div class="wrap facts-grid">
+    <div class="fact">
+      <span class="number">2 900 000 ₽</span>
+      <small data-ru="единовременная выплата" data-uz="bir martalik to'lov">единовременная выплата</small>
+    </div>
+    <div class="fact">
+      <span class="number">210 000 ₽</span>
+      <small data-ru="ежемесячно в зоне СВО" data-uz="har oy SVO hududida">ежемесячно в зоне СВО</small>
+    </div>
+    <div class="fact">
+      <span class="number" data-ru="от 1 года" data-uz="1 yildan">от 1 года</span>
+      <small data-ru="срок контракта" data-uz="shartnoma muddati">срок контракта</small>
+    </div>
+    <div class="fact">
+      <span class="number" data-ru="18–65 лет" data-uz="18–65 yosh">18–65 лет</span>
+      <small data-ru="возраст кандидата" data-uz="nomzod yoshi">возраст кандидата</small>
+    </div>
+  </div>
+</div>
+
+<section class="section" id="directions">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow" data-ru="01 / Тыловые должности" data-uz="01 / Orqa lavozimlar">
+          01 / Тыловые должности
+        </p>
+        <h2 data-ru="Ваша специальность востребована."
+            data-uz="Sizning mutaxassisligingiz talab qilinadi.">
+          Ваша специальность востребована.
+        </h2>
+      </div>
+      <p class="intro"
+         data-ru="Иностранные граждане направляются преимущественно в тыловые и обеспечивающие части. Конкретная должность подбирается под ваш опыт."
+         data-uz="Xorijiy fuqarolar asosan orqa va ta'minot qismlariga yuboriladi. Aniq lavozim tajribangizga qarab tanlanadi.">
+        Иностранные граждане направляются преимущественно в тыловые и обеспечивающие части. Конкретная должность подбирается под ваш опыт.
+      </p>
+    </div>
+
+    <div class="grid">
+      <article class="card reveal">
+        <span class="card-id">01</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#truck"/></svg></div>
+        <h3 data-ru="Водители" data-uz="Haydovchilar">Водители</h3>
+        <p data-ru="Автотранспортные роты, подвоз продовольствия и материального обеспечения. Все категории прав."
+           data-uz="Avtotransport rotalari, oziq-ovqat va moddiy ta'minot. Barcha toifadagi huquqlar.">
+          Автотранспортные роты, подвоз продовольствия и материального обеспечения. Все категории прав.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-id">02</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#box"/></svg></div>
+        <h3 data-ru="Склады и материальное обеспечение" data-uz="Ombor va moddiy ta'minot">
+          Склады и материальное обеспечение
+        </h3>
+        <p data-ru="Кладовщики, работники складов, специалисты по учёту и приёмке."
+           data-uz="Omborchilar, ombor xodimlari, hisob va qabul qilish mutaxassislari.">
+          Кладовщики, работники складов, специалисты по учёту и приёмке.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-id">03</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#building"/></svg></div>
+        <h3 data-ru="Связь и БПЛА" data-uz="Aloqa va BPLa">Связь и БПЛА</h3>
+        <p data-ru="Связисты, радиотелеграфисты, операторы БПЛА в обеспечивающих подразделениях."
+           data-uz="Aloqa mutaxassislari, radiotelegrafistlar, ta'minot bo'linmalarida BPL operatorlari.">
+          Связисты, радиотелеграфисты, операторы БПЛА в обеспечивающих подразделениях.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-id">04</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#tool"/></svg></div>
+        <h3 data-ru="Ремонт и строительство" data-uz="Ta'mirlash va qurilish">
+          Ремонт и строительство
+        </h3>
+        <p data-ru="Плотники, мастера-электрики, дизелисты, строительные специальности."
+           data-uz="Duradgorlar, elektrik ustalar, dizelchilar, qurilish mutaxassisliklari.">
+          Плотники, мастера-электрики, дизелисты, строительные специальности.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-id">05</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#coffee"/></svg></div>
+        <h3 data-ru="Быт и медицина" data-uz="Maishiy va tibbiyot">Быт и медицина</h3>
+        <p data-ru="Повара, фельдшеры, банщики, работники хозяйственных частей."
+           data-uz="Oshpazlar, feldsherlar, hammomchilar, xo'jalik qismlari xodimlari.">
+          Повара, фельдшеры, банщики, работники хозяйственных частей.
+        </p>
+      </article>
+
+      <article class="card reveal">
+        <span class="card-id">06</span>
+        <div class="icon"><svg aria-hidden="true"><use href="#people"/></svg></div>
+        <h3 data-ru="Индивидуальный подход" data-uz="Individual yondashuv">
+          Индивидуальный подход
+        </h3>
+        <p data-ru="Конкретная должность определяется с учётом вашего образования, опыта и потребностей части."
+           data-uz="Aniq lavozim sizning ma'lumotingiz, tajribangiz va qism ehtiyojlarini hisobga olgan holda belgilanadi.">
+          Конкретная должность определяется с учётом вашего образования, опыта и потребностей части.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section terms" id="terms">
+  <div class="wrap terms-grid">
+    <div class="reveal">
+      <p class="eyebrow" data-ru="02 / Условия" data-uz="02 / Shartlar">
+        02 / Условия
+      </p>
+      <h2 data-ru="Гарантии от государства."
+          data-uz="Davlat kafolatlari.">
+        Гарантии от государства.
+      </h2>
+      <p class="intro"
+         data-ru="Все выплаты, льготы и гражданство предоставляются в соответствии с законодательством РФ."
+         data-uz="Barcha to'lovlar, imtiyozlar va fuqarolik RF qonunchiligiga muvofiq taqdim etiladi.">
+        Все выплаты, льготы и гражданство предоставляются в соответствии с законодательством РФ.
+      </p>
+      <a class="btn gold" href="#application">
+        <span data-ru="Узнать подробности" data-uz="Batafsil ma'lumot">Узнать подробности</span>
+        <svg aria-hidden="true"><use href="#arrow"/></svg>
+      </a>
+    </div>
+
+    <div class="terms-list reveal">
+      <div class="term">
+        <svg aria-hidden="true"><use href="#document"/></svg>
+        <div>
+          <h3 data-ru="Выплаты и довольствие" data-uz="To'lovlar va nafaqalar">Выплаты и довольствие</h3>
+          <p data-ru="До 2 900 000 ₽ при подписании. В отдельных регионах до 4 100 000 ₽. Ежемесячно от 210 000 ₽."
+             data-uz="Imzolashda 2 900 000 ₽ gacha. Ayrim mintaqalarda 4 100 000 ₽ gacha. Har oy 210 000 ₽ dan.">
+            До 2 900 000 ₽ при подписании. В отдельных регионах до 4 100 000 ₽. Ежемесячно от 210 000 ₽.
+          </p>
+        </div>
+      </div>
+
+      <div class="term">
+        <svg aria-hidden="true"><use href="#check"/></svg>
+        <div>
+          <h3 data-ru="Гражданство РФ" data-uz="RF fuqaroligi">Гражданство РФ</h3>
+          <p data-ru="Упрощённый порядок получения гражданства для вас, а также ваших супругов, детей и родителей."
+             data-uz="Siz, shuningdek turmush o'rtoqlaringiz, bolalaringiz va ota-onalaringiz uchun fuqarolik olishning soddalashtirilgan tartibi.">
+            Упрощённый порядок получения гражданства для вас, а также ваших супругов, детей и родителей.
+          </p>
+        </div>
+      </div>
+
+      <div class="term">
+        <svg aria-hidden="true"><use href="#building"/></svg>
+        <div>
+          <h3 data-ru="Льготы для семьи" data-uz="Oila uchun imtiyozlar">Льготы для семьи</h3>
+          <p data-ru="Дети получают бюджетные места в вузах РФ (квоты). Бесплатная медицина и страхование."
+             data-uz="Bolalar RF oliy o'quv yurtlarida byudjet o'rinlarini oladilar (kvotalar). Bepul tibbiyot va sug'urta.">
+            Дети получают бюджетные места в вузах РФ (квоты). Бесплатная медицина и страхование.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="support">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <p class="eyebrow" data-ru="03 / Сопровождение" data-uz="03 / Ko'mak">
+          03 / Сопровождение
+        </p>
+        <h2 data-ru="Трансфер и адаптация." data-uz="Transfer va moslashish.">
+          Трансфер и адаптация.
+        </h2>
+      </div>
+      <p class="intro"
+         data-ru="Мы берём на себя всю логистику. Встречаем, размещаем и помогаем с оформлением документов."
+         data-uz="Biz barcha logistikani o'z zimmamizga olamiz. Kutib olamiz, joylashtiramiz va hujjatlarni rasmiylashtirishga yordam beramiz.">
+        Мы берём на себя всю логистику. Встречаем, размещаем и помогаем с оформлением документов.
+      </p>
+    </div>
+
+    <div class="grid support-grid">
+      <article class="card support-card reveal">
+        <div class="photo-wrap">
+          <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?w=1200&q=80" width="1200" height="800" loading="lazy"
+            alt="Крыло самолёта над облаками" data-alt-ru="Крыло самолёта над облаками" data-alt-uz="Bulutlar ustidagi samolyot qanoti">
+        </div>
+        <div class="photo-caption">
+          <div class="icon"><svg aria-hidden="true"><use href="#plane"/></svg></div>
+          <h3 data-ru="Билет и встреча" data-uz="Chipta va kutib olish">
+            Билет и встреча
+          </h3>
+          <p data-ru="Покупка билета из страны прибытия. Встреча в аэропорту или на вокзале, трансфер."
+             data-uz="Kelish mamlakatidan chipta sotib olish. Aeroport yoki vokzalda kutib olish, transfer.">
+            Покупка билета из страны прибытия. Встреча в аэропорту или на вокзале, трансфер.
+          </p>
+        </div>
+      </article>
+
+      <article class="card support-card reveal">
+        <div class="photo-wrap">
+          <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80" width="1200" height="800" loading="lazy"
+            alt="Отель с бассейном" data-alt-ru="Отель с бассейном" data-alt-uz="Hovuzli mehmonxona">
+        </div>
+        <div class="photo-caption">
+          <div class="icon"><svg aria-hidden="true"><use href="#bed"/></svg></div>
+          <h3 data-ru="Проживание и питание" data-uz="Turar joy va ovqatlanish">Проживание и питание</h3>
+          <p data-ru="Размещение в гостинице или общежитии на время оформления. Трёхразовое питание."
+             data-uz="Rasmiylashtirish vaqtida mehmonxona yoki yotoqxonada joylashtirish. Kuniga uch mahal ovqat.">
+            Размещение в гостинице или общежитии на время оформления. Трёхразовое питание.
+          </p>
+        </div>
+      </article>
+
+      <article class="card support-card reveal">
+        <div class="photo-wrap">
+          <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=1200&q=80" width="1200" height="800" loading="lazy"
+            alt="Сервировка стола в ресторане" data-alt-ru="Сервировка стола в ресторане" data-alt-uz="Restorandagi bezatilgan stol">
+        </div>
+        <div class="photo-caption">
+          <div class="icon"><svg aria-hidden="true"><use href="#people"/></svg></div>
+          <h3 data-ru="Полное сопровождение" data-uz="To'liq hamrohlik">
+            Полное сопровождение
+          </h3>
+          <p data-ru="Помощь с документами, военным билетом, медицинским осмотром на всех этапах."
+             data-uz="Barcha bosqichlarda hujjatlar, harbiy bilet, tibbiy ko'rik bilan yordam.">
+            Помощь с документами, военным билетом, медицинским осмотром на всех этапах.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section process">
+  <div class="wrap reveal">
+    <p class="eyebrow" data-ru="04 / Порядок поступления" data-uz="04 / Qabul tartibi">
+      04 / Порядок поступления
+    </p>
+    <h2 data-ru="Пять шагов до службы." data-uz="Xizmatgacha besh qadam.">
+      Пять шагов до службы.
+    </h2>
+
+    <div class="steps">
+      <div class="step">
+        <span class="number">01</span>
+        <h3 data-ru="Заявка" data-uz="Ariza">Заявка</h3>
+        <p data-ru="Свяжитесь с нами, мы ответим на все вопросы."
+           data-uz="Biz bilan bog'laning, barcha savollarga javob beramiz.">
+          Свяжитесь с нами, мы ответим на все вопросы.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="number">02</span>
+        <h3 data-ru="Документы" data-uz="Hujjatlar">Документы</h3>
+        <p data-ru="Помогаем собрать пакет и организуем проезд."
+           data-uz="To'plamni yig'ishga yordam beramiz va yo'lni tashkil qilamiz.">
+          Помогаем собрать пакет и организуем проезд.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="number">03</span>
+        <h3 data-ru="Медкомиссия" data-uz="Tibbiy komissiya">Медкомиссия</h3>
+        <p data-ru="Прохождение медосмотра и собеседования с психологом."
+           data-uz="Tibbiy ko'rik va psixolog bilan suhbatdan o'tish.">
+          Прохождение медосмотра и собеседования с психологом.
+        </p>
+      </div>
+
+      <div class="step">
+        <span class="number">04</span>
+        <h3 data-ru="Контракт" data-uz="Shartnoma">Контракт</h3>
+        <p data-ru="Подписание контракта, получение первой выплаты и направление в часть."
+           data-uz="Shartnoma imzolash, birinchi to'lovni olish va qismga yuborish.">
+          Подписание контракта, получение первой выплаты и направление в часть.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="application">
+  <div class="wrap contact">
+    <div class="contact-side reveal">
+      <p class="eyebrow" data-ru="05 / Следующий шаг" data-uz="05 / Keyingi qadam">
+        05 / Следующий шаг
+      </p>
+      <h2 data-ru="Начните с заявки." data-uz="Ariza bilan boshlang.">
+        Начните с заявки.
+      </h2>
+      <p class="intro"
+         data-ru="Оставьте свои контакты. Мы свяжемся с вами в течение 24 часов, чтобы обсудить условия и ответить на вопросы."
+         data-uz="Kontaktlaringizni qoldiring. Shartlarni muhokama qilish va savollarga javob berish uchun 24 soat ichida siz bilan bog'lanamiz.">
+        Оставьте свои контакты. Мы свяжемся с вами в течение 24 часов, чтобы обсудить условия и ответить на вопросы.
+      </p>
+      
+      <div style="margin-top:34px; display:flex; flex-direction:column; gap:12px; font-weight:600; color:var(--green);">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg aria-hidden="true"><use href="#check"/></svg>
+          <span>+7 (XXX) XXX-XX-XX</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg aria-hidden="true"><use href="#check"/></svg>
+          <span>WhatsApp / Telegram</span>
+        </div>
+      </div>
+
+    </div>
+
+    <form class="form reveal" id="contact-form">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name" data-ru="Имя и фамилия *" data-uz="Ism va familiya *">
+            Имя и фамилия *
+          </label>
+          <input id="name" name="name" autocomplete="given-name" maxlength="80" required placeholder="Ваше имя" data-placeholder-ru="Ваше имя" data-placeholder-uz="Ismingiz">
+        </div>
+
+        <div class="field">
+          <label for="phone" data-ru="Телефон *" data-uz="Telefon *">Телефон *</label>
+          <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" maxlength="30" required placeholder="+998 90 123 45 67">
+        </div>
+
+        <div class="field">
+          <label for="age" data-ru="Возраст" data-uz="Yosh">Возраст</label>
+          <input id="age" name="age" type="number" min="18" max="65" placeholder="25">
+        </div>
+
+        <div class="field">
+          <label for="role" data-ru="Должность *" data-uz="Lavozim *">Должность *</label>
+          <select id="role" name="role" required>
+            <option value="" disabled selected data-ru="Выберите" data-uz="Tanlang">Выберите</option>
+            <option value="driver" data-ru="Водитель" data-uz="Haydovchi">Водитель</option>
+            <option value="warehouse" data-ru="Склад" data-uz="Ombor">Склад</option>
+            <option value="signal" data-ru="Связист" data-uz="Aloqa mutaxassisi">Связист</option>
+            <option value="drone" data-ru="Оператор БПЛА" data-uz="BPL operatori">Оператор БПЛА</option>
+            <option value="cook" data-ru="Повар / фельдшер" data-uz="Oshpaz / feldsher">Повар / фельдшер</option>
+            <option value="repair" data-ru="Ремонт / стройка" data-uz="Ta'mirlash / qurilish">Ремонт / стройка</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="comment" data-ru="Комментарий" data-uz="Izoh">Комментарий</label>
+          <textarea id="comment" name="comment" maxlength="1500" placeholder="Дополнительная информация..." data-placeholder-ru="Дополнительная информация..." data-placeholder-uz="Qo'shimcha ma'lumot..."></textarea>
+        </div>
+      </div>
+
+      <button class="btn green" type="submit">
+        <span data-ru="Отправить заявку" data-uz="Arizani yuborish">Отправить заявку</span>
+        <svg aria-hidden="true"><use href="#arrow"/></svg>
+      </button>
+
+      <p class="success" id="success" role="status" aria-live="polite" hidden
+         data-ru="✓ Заявка отправлена! Мы свяжемся с вами в течение 24 часов."
+         data-uz="✓ Ariza yuborildi! Biz 24 soat ichida siz bilan bog'lanamiz.">
+        ✓ Заявка отправлена! Мы свяжемся с вами в течение 24 часов.
+      </p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <a class="brand" href="#">
+      <svg aria-hidden="true"><use href="#mark"/></svg>
+      <span data-ru="КОНТРАКТ" data-uz="KONTRAKT">КОНТРАКТ</span>
+    </a>
+    <p data-ru="© 2026 Уполномоченные представители. Официальное информирование о военной службе по контракту."
+       data-uz="© 2026 Vakolatli vakillar. Shartnoma bo'yicha harbiy xizmat haqida rasmiy ma'lumot.">
+      © 2026 Уполномоченные представители. Официальное информирование о военной службе по контракту.
+    </p>
+  </div>
+</footer>
+
+<script>
+let language = 'ru';
+const form = document.getElementById('contact-form');
+const phone = document.getElementById('phone');
+const success = document.getElementById('success');
+
+function setLanguage(lang) {
+  language = lang;
+  document.documentElement.lang = lang;
+
+  document.title = lang === 'ru'
+    ? 'Служба по контракту в ВС РФ'
+    : 'RF Qurolli Kuchlarida shartnoma bo\'yicha xizmat';
+
+  document.querySelectorAll('[data-ru]').forEach(el => {
+    el.textContent = el.getAttribute('data-' + lang);
+  });
+
+  [
+    ['placeholder', 'placeholder'],
+    ['alt', 'alt'],
+    ['label', 'aria-label']
+  ].forEach(([key, attr]) => {
+    document.querySelectorAll('[data-' + key + '-ru]').forEach(el => {
+      el.setAttribute(attr, el.getAttribute('data-' + key + '-' + lang));
+    });
+  });
+
+  document.querySelectorAll('[data-lang]').forEach(button => {
+    button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
+  });
+
+  phone.setCustomValidity('');
+}
+
+document.querySelectorAll('[data-lang]').forEach(button => {
+  button.addEventListener('click', () => setLanguage(button.dataset.lang));
+});
+
+if (
+  'IntersectionObserver' in window &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.08 });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  document.documentElement.classList.add('motion');
+}
+
+form.addEventListener('submit', event => {
+  event.preventDefault();
+
+  const digits = phone.value.replace(/\D/g, '');
+  const valid =
+    /^[+\d\s().-]+$/.test(phone.value) &&
+    digits.length >= 7 &&
+    digits.length <= 15;
+
+  phone.setCustomValidity(
+    valid
+      ? ''
+      : language === 'ru'
+        ? 'Введите телефон: от 7 до 15 цифр.'
+        : 'Telefon raqamini kiriting: 7 dan 15 tagacha raqam.'
+  );
+
+  if (!form.reportValidity()) return;
+
+  success.hidden = false;
+  success.scrollIntoView({
+    block: 'nearest',
+    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+  });
+  
+  // Очистка формы после отправки (визуально)
+  form.reset();
+});
+
+form.addEventListener('input', () => {
+  phone.setCustomValidity('');
+  success.hidden = true;
+});
+</script>
+</body>
+</html>
